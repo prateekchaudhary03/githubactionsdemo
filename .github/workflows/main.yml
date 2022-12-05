@@ -49,4 +49,4 @@ jobs:
       - name: Docker build images
         run: docker build -t ${{ secrets.DockerRepo }}:latest .
       - name: docker push to docker hub   
-        run: docker push ${{ secrets.DockerRepo }}
+        run: docker push prateekchaudhary03/${{ secrets.DockerRepo }}
