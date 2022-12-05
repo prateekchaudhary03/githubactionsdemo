@@ -15,7 +15,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 14
-    - name: Cache the maven dependenices to speed the build
+    - name: Cache the maven dependenices to speed up the build
       uses: actions/cache@v1
       with:
         path: ~/.m2
@@ -29,7 +29,7 @@ jobs:
     needs: [build_and_test]
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setip-java@v1
+    - uses: actions/setup-java@v1
       with:
         java-version: 14
     - run: mvn -B package --file pom.xml  -DskipTests
