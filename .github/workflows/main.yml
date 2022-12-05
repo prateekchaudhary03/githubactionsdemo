@@ -18,7 +18,7 @@ jobs:
     - name: Cache the maven dependenices to speed the build
       uses: actions/cache@v1
       with:
-        paht: ~/.m2
+        path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
           
