@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Docker login with username and password
-        run: docker login -u ${{ secrets.DockerUsername }} -p ${{ secrets.DockerPassword }}
+        run: docker login -u ${{ secrets.DockerUsername }} -p ${{ secrets.DockerPassword }} docker.io
       - name: Docker build images
         run: docker build -t ${{ secrets.DockerRepo }}:latest .
       - name: docker push to docker hub   
