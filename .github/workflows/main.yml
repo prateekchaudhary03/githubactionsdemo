@@ -48,5 +48,7 @@ jobs:
         run: docker login -u ${{ secrets.DockerUsername }} -p ${{ secrets.DockerPassword }} docker.io
       - name: Docker build images
         run: docker build -t ${{ secrets.DockerRepo }}:latest .
+      - name: Docker tag
+        run: docker tag ${{ secrets.DockerRepo }} prateekchaudhary03/${{ secrets.DockerRepo }}
       - name: docker push to docker hub   
         run: docker push prateekchaudhary03/${{ secrets.DockerRepo }}
